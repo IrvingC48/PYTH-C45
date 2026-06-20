@@ -75,3 +75,5 @@ print(bloolean_float) #Output True
 fruta = 'platano'
 fruta_int = int(float(fruta)) # ValueError: invalid literal for int() with base 10: 'platano'
 print(fruta_int)
+
+#-----------------------------------------------------------------------
