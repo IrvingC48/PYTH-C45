@@ -11,6 +11,6 @@ def realizar_conversion(monto, moneda_origen, moneda_destino):
         return None
 
     valor_en_usd = monto / tasas.TASAS[moneda_origen]
-    valor_final = valor_en_usd / tasas.TASAS[moneda_destino]
+    valor_final = valor_en_usd * tasas.TASAS[moneda_destino]
 
-    return round(valor_final, 2)
+    return round(valor_final)
