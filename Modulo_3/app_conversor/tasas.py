@@ -2,7 +2,7 @@
 #1 USD equivale a:
 TASAS = {
     "USD" : 1.0,
-    "EUR" : 0.95,
-    "MXN" : 18.95,
-    "COP" : 4100
+    "EUR" : 0.86,
+    "MXN" : 16.92,
+    "COP" : 3071.41
 }
