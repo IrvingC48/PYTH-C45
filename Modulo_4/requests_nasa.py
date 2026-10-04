@@ -30,7 +30,9 @@ if response.status_code == 200:
         # print("guardado")
 
         #1. Obtiene la primera fecha del diccionario
-        first_date = next(iter(data["near_earth_objects"])) #<-- next 
+        first_date = next(iter(data["near_earth_objects"])) #<-- next(iter(...)) extrae el primer elemento de una colección iterable 
+                                                                #(como las claves de un diccionario) de forma directa en tiempo O(1), 
+                                                                # sin necesidad de convertir toda la estructura en una lista en memoria. 
         print(f'Procesando fecha: {first_date}\n')
 
         for neo_feed in data["near_earth_objects"][first_date]: #<-- Agregamos la primera fecha para acotar el recorrido
