@@ -28,7 +28,14 @@ if response.status_code == 200:
         data = response.json()
         json.dump(data, archivo, ensure_ascii=False, indent=4)
         # print("guardado")
-        for neo_feed in data["near_earth_objects"]:
-            print(f'Is dangerous?: {neo_feed[0][0]}') #["estimated_diameter"]["is_potentially_hazardous_asteroid"]
+
+        #1. Obtiene la primera fecha del diccionario
+        first_date = next(iter(data["near_earth_objects"])) #<-- next 
+        print(f'Procesando fecha: {first_date}\n')
+
+        for neo_feed in data["near_earth_objects"][first_date]: #<-- Agregamos la primera fecha para acotar el recorrido
+            name = neo_feed["name"]
+            dangerous = neo_feed["is_potentially_hazardous_asteroid"]
+            print(f'Asteroide: {name} | ¿Es peligroso?: {dangerous}') #["estimated_diameter"]["is_potentially_hazardous_asteroid"]
 else:
     print(f'Error: {response.status_code}')
